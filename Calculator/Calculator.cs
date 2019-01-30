@@ -30,5 +30,13 @@ namespace Calculator
             return Math.Pow(a,exp);
         }
 
+        public double Divide(double divided, double divisor)
+        {
+            if (divisor == 0)
+                throw new System.DivideByZeroException();
+            return divided / divisor;
+        }
+
+
     }
 }
