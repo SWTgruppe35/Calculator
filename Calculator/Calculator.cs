@@ -17,7 +17,7 @@ namespace Calculator
         {
             return a + b; 
         }
-        double Subtract(double a, double b)
+        public double Subtract(double a, double b)
         {
             return a - b;
         }
