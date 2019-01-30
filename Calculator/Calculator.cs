@@ -35,6 +35,7 @@ namespace Calculator
             if (divisor == 0)
                 throw new System.DivideByZeroException();
             return divided / divisor;
+
         }
 
 
