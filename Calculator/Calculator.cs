@@ -15,28 +15,35 @@ namespace Calculator
 
         public double Add(double a, double b)
         {
-            return a + b; 
+            Accumulator = a + b;
+            return Accumulator; 
         }
         public double Subtract(double a, double b)
         {
-            return a - b;
+            Accumulator = a - b;
+            return Accumulator;
         }
-        double Multiply(double a, double b)
+        public double Multiply(double a, double b)
         {
-            return a * b;
+            Accumulator = a * b;
+            return Accumulator;
         }
-        double Power(double a, double exp)
+        public double Power(double a, double exp)
         {
-            return Math.Pow(a,exp);
+            Accumulator = Math.Pow(a, exp);
+            return Accumulator;
         }
 
         public double Divide(double divided, double divisor)
         {
             if (divisor == 0)
                 throw new System.DivideByZeroException();
-            return divided / divisor;
+            Accumulator = divided / divisor;
+            return Accumulator;
 
         }
+        
+        public double Accumulator { get ; private set; }
 
 
     }
