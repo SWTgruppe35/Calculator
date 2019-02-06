@@ -82,6 +82,17 @@ namespace Calculator.Test.Unit
             Assert.True(thrown);
         }
 
+        public void Accumulatornumplusnum()
+        {
+            Assert.That(_uut.Accumulator, Is.EqualTo());
+        }
+
+        [TestCase(0)]
+        public void IsClearequalstozero(int result)
+        {
+            Assert.That(_uut.Accumulator, Is.EqualTo(result));
+        }
+
         
     };
 }
