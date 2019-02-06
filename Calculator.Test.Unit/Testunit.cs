@@ -108,7 +108,18 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Accumulator, Is.EqualTo(0));
         }
 
+        [TestCase(6, 2, 36)]
+        [TestCase(-6, 2, 36)]
+        [TestCase(-3, 3, -27)]
+        [TestCase(3, 4, 81)]
+        [TestCase(4, -1, 0.25)]
+        [TestCase(0, 3, 0)]
+        [TestCase(100, 0, 1)]
+        public void Pow_PosAndNegNum_ResultIsCorrect(int a, int b, double result)
+        {
+            Assert.That(_uut.Power(a, b), Is.EqualTo(result));
 
+        }
 
     };
 }
