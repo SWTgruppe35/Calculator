@@ -82,18 +82,34 @@ namespace Calculator.Test.Unit
             Assert.True(thrown);
         }
 
-        public void Accumulatornumplusnum()
+        [Test]
+        public void AccumulatorNumplusNum()
         {
-            Assert.That(_uut.Accumulator, Is.EqualTo());
+            _uut.Add(5,5);
+            Assert.That(_uut.Accumulator, Is.EqualTo(10));
         }
 
-        [TestCase(0)]
-        public void IsClearequalstozero(int result)
+        [Test]
+        public void AccumulatorIsLastCalculation()
         {
-            Assert.That(_uut.Accumulator, Is.EqualTo(result));
+            _uut.Subtract(5, 4);
+            _uut.Multiply(10, 1);
+
+            Assert.That(_uut.Accumulator, Is.EqualTo(10));
         }
 
-        
+        [Test]
+        public void AccumulatorIsCleared()
+        {
+            _uut.Subtract(5, 4);
+            _uut.Divide(10, 1);
+            _uut.Clear();
+
+            Assert.That(_uut.Accumulator, Is.EqualTo(0));
+        }
+
+
+
     };
 }
 
